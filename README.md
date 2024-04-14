@@ -30,4 +30,5 @@ HonoX with worker server, ready for docker deployment
 - [ ] Shared component library?
 - [ ] Get freaky with Solid/React?
 - [ ] HTMX HonoJSX hooks
+- [ ] Flagsafe
 

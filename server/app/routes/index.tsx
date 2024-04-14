@@ -1,18 +1,12 @@
-import { css } from 'hono/css'
-import { createRoute } from 'honox/factory'
-import Counter from '../islands/counter'
+import { createRoute } from "honox/factory";
+import Counter from "../islands/counter";
 
-const className = css`
-  font-family: sans-serif;
-`
-
-export default createRoute((c) => {
-  const name = c.req.query('name') ?? 'Hono'
+export default createRoute(async (c) => {
   return c.render(
-    <div class={className}>
-      <h1>Hello, {name}!</h1>
+    <div class="mt-48 max-w-md mx-auto border border-black p-4">
       <Counter />
-    </div>,
-    { title: name }
-  )
-})
+      <hr class="border-[0.5px] border-gray-100 my-4" />
+      <h1 class="bg-blue-200 px-2">Hello, Drew! Tailwind is working!</h1>
+    </div>
+  );
+});

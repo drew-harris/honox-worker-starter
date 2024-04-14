@@ -1,8 +1,18 @@
-import { showRoutes } from 'hono/dev'
-import { createApp } from 'honox/server'
+import { showRoutes } from "hono/dev";
+import { Hono } from "hono";
+import { createApp } from "honox/server";
 
-const app = createApp()
+const baseApp = new Hono();
 
-showRoutes(app)
+baseApp.use(async (c, next) => {
+  // c.set("elastic", elastic);
+  await next();
+});
 
-export default app
+const app = createApp({
+  app: baseApp,
+});
+
+showRoutes(app);
+
+export default app;

@@ -8,6 +8,8 @@
     "build": {
       "outputs": ["dist/**"]
     },
-    "type-check": {}
+    "serve": {
+      "dependsOn": ["build"]
+    }
   }
 }
